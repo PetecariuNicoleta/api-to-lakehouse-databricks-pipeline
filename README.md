@@ -42,7 +42,7 @@ API → Bronze Layer → Silver Layer → Gold Layer
 * Layered architecture (Bronze, Silver, Gold)
 * Orchestration using Databricks Jobs
 
-![Screenshot 2026-03-26 at 12.19.45_1774520422740.png](https://github.com/PetecariuNicoleta/api-to-lakehouse-databricks-pipeline.git/Databricks_Pipeline.png)
+![Databricks_Pipeline.png](https://github.com/PetecariuNicoleta/api-to-lakehouse-databricks-pipeline/blob/main/Databricks_Pipeline.png)
 
 
 📊 Future Improvements
