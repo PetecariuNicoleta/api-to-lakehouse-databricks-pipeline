@@ -19,10 +19,10 @@ df_clean = df_clean.filter(col("id").isNotNull())
 spark.sql("""
 CREATE TABLE IF NOT EXISTS silver_posts
 USING DELTA
-AS SELECT * FROM bronze_posts WHERE 1=0
+AS SELECT * FROM bronze_posts
 """)
 
-# IDEMPOTENT MERGE (IMPORTANT)
+# IDEMPOTENT MERGE
 df_clean.createOrReplaceTempView("updates")
 
 spark.sql("""
@@ -34,3 +34,5 @@ WHEN NOT MATCHED THEN INSERT *
 """)
 
 print("Silver layer completed")
+
+

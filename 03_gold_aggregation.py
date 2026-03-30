@@ -1,11 +1,10 @@
 from pyspark.sql.functions import count
 
 # READ SILVER TABLE
-df = spark.table("silver_posts")
+df = spark.read.table("silver_posts")
 
 # AGGREGATION
-df_gold = df.groupBy("userId") \
-            .agg(count("*").alias("total_posts"))
+df_gold = df.groupBy("userId").agg(count("*").alias("total_posts"))
 
 # WRITE GOLD (overwrite = safe, reproducible)
 df_gold.write.format("delta") \
@@ -20,3 +19,5 @@ AS SELECT * FROM gold_posts
 """)
 
 print("Gold layer completed")
+
+

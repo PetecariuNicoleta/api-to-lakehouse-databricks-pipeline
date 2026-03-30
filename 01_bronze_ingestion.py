@@ -1,7 +1,3 @@
-# CONFIG
-base_path = "dbfs:/user/hive/warehouse/lakehouse_project"
-bronze_path = f"{base_path}/bronze/posts"
-
 import requests
 from pyspark.sql.functions import current_timestamp, col
 
